@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1> 
+        {% if editMode %}
+        Modifier la réunion
+        {% else %}
+        Planifier une nouvelle réunion
+        {% endif %}
+     </h1>
+    <hr>
+    {{ form_start(formReunion) }}
+    
+    {{ form_row(formReunion.title, { 'attr' : { 'placeholder': "Titre de la reuion" } }) }}
+    {{ form_row(formReunion.theme, { 'attr': { 'placeholder': "Thème de la réunion" } }) }}
+    {{ form_row(formReunion.type, { 'attr': { 'placeholder': "Type de réunion" } }) }}
+    {{ form_row(formReunion.salle, { 'attr': { 'placeholder': "La salle pour la réunion" } }) }}
+    {{ form_row(formReunion.details, { 'attr': { 'placeholder': "Les details de la réunion" } }) }}
+    {{ form_row(formReunion.date, { 'attr': { 'placeholder': "La date de la tenu de la reunion" } }) }}
+    {{ form_row(formReunion.heureDebut, { 'attr': { 'placeholder': "L'heure du debut de la reunion" } }) }}
+    {{ form_row(formReunion.heureFin, { 'attr': { 'placeholder': "L'heure de la fin de la reuion" } }) }}
+
+    <button type="submit" class="btn btn-success">
+        {% if editMode %}
+        Enregitrer les modification
+        {% else %}
+        Créer la réunion
+        {% endif %}
+    </button>
+    
+    {{ form_end(formReunion) }}
+
+{% endblock %}

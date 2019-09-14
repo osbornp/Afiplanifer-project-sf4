@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1> Bienvnue sur le AFI-PLANIFICATEUR DE REUNION  </h1>
+    <hr>
+    
+    <p>Depuis sa création en 1993, l’université AFI L’UE 
+        cultive des valeurs fondées sur : la créativité, 
+        le professionnalisme et la bonne gouvernance tout 
+        en formant des nouvelles générations des dirigeants 
+        capables de dépasser les cultures, les frontières 
+        et les disciplines afin d’apporter une plus-value à l’entreprise.
+         Son organisation et sa pédagogie ancrées sur le développement de la créativité
+          et du savoir- faire de l’étudiant, se penchent dans une panoplie complète des programmes pour former des 
+          entrepreneurs et des dirigeants d’entreprises ambitieux, 
+          économiquement efficaces et socialement responsables.
+    </p>
+    <p>Le groupe AFI L’UE présente un mélange culturel très varié. Ce multiculturalisme est un modèle d’intégration et de gestion de la diversité ethnoculturelle. Ainsi, au sein de cet établissement aucune différenciation culturelle n’est observée. Nous sommes tous, à la seule famille cohabitant en parfaite cohésion, avec un soutien indéniable de l’ensemble du corps professoral et administratif, apporté aux étudiants et apprenant.
+    </p>
+    <hr>
+        <h4>Que voulez-vous faire?</h4>
+    <hr>
+    <a href="/admin/planifier" class="btn btn-info"><ion-icon name="clipboard" size="small"></ion-icon> Créer une reunions</a>&emsp;
+    <a href="/blog" class="btn btn-info"><ion-icon name="paper" size="small"></ion-icon> Consulter la liste des reunions</a>&emsp;
+    <a href="/admin/new_participant" class="btn btn-info"><ion-icon name="person-add" size="small"></ion-icon>  Créer un participant</a>&emsp;
+    <a href="/admin/liste_participants" class="btn btn-info"><ion-icon name="contacts" size="small"></ion-icon> Consulter la Liste des participants</a>
+{% endblock %}

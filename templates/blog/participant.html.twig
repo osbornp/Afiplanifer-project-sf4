@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="metadata">
+ <h2>Participant créer le  {{ participant.createdAt | date('d/m/Y') }} à  {{ participant.createdAt | date('H:i') }}</h2>
+</div>
+<hr>
+        <div class="content">
+                <h1><u>NOM</u> : {{ participant.nom }} </h1>
+                <h3><u>PRENOM</u> : {{ participant.prenom }} </h3>
+                <h3><u>POSTE</u> : {{ participant.poste }} </h3> 
+                <h3><u>MAIL</u> : {{ participant.email }} </h3>
+                <h3><u>TELEPHONE</u> : {{ participant.telephone }} </h3> 
+        </div>
+        <hr>
+        <a href=" {{path('blog_editer_participant', {'id':participant.id})}} " class="btn btn-primary"><ion-icon name="create" size="small"></ion-icon> Modifier les informations</a>&emsp;
+        <a href="" class="btn btn btn-primary"><ion-icon name="add-circle" size="small"></ion-icon> Ajouter dans une réunion</a>&emsp;
+        <a href="" class="btn btn btn-danger"><ion-icon name="trash" size="small"></ion-icon> Supprimer le participant</a>
+
+{% endblock %}

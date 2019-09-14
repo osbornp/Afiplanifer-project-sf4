@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% if editMode %}
+    <h1>Modifier les informations du participant </h1>
+    {% else %}
+    <h1>Creation d'un participant </h1>
+    {% endif %}
+    <hr>
+    {{ form_start(formParticipant) }}
+
+     {{ form_row(formParticipant.nom, { 'attr': { 'placeholder': "Le nom du participant" } }) }}
+     {{ form_row(formParticipant.prenom, { 'attr': { 'placeholder': "Le prénom du participant" } }) }}
+     {{ form_row(formParticipant.poste, { 'attr': { 'placeholder': "La fonction du participant" } }) }}
+     {{ form_row(formParticipant.email, { 'attr': { 'placeholder': "L'addresse électronique du participant" } }) }}
+     {{ form_row(formParticipant.telephone, { 'attr': { 'placeholder': "Le numéro de téléphone du participant" } }) }}
+
+    <button type="submit" class="btn btn-success">
+      {% if editMode %}
+      Enregister les modifications 
+      {% else %}
+      Créer le participant
+      {% endif %}
+    </button>
+
+  {{ form_end(formParticipant) }}
+
+{% endblock %}

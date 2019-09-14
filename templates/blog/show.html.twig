@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <article>
+        <h2><u>TITRE</u>: &emsp;{{ reunion.title }}</h2>
+        <div class="metadata">Créer le {{ reunion.createdAt | date('d/m/Y') }} à 
+             {{ reunion.createdAt | date('H:i') }} 
+        </div>
+        <div class="content">
+            <h5><u>THEME</u>:&emsp;{{ reunion.theme }}</h5>
+            <h5><u>TYPE DE REUNION</u>:&emsp;{{ reunion.type }}</h5>
+            <h4>Réunion tenu le : &emsp; {{reunion.date}} </h4>
+            <h4>De {{reunion.heureDebut}} à {{reunion.heureFin}} </h4>
+            <h4> Réunion ténu dans :  {{ reunion.salle }}</h4>
+            <hr>
+            <p>
+                {{ reunion.details | raw }}
+            </p>
+            <hr>
+            <a href="{{ path( 'blog_editer_reunion', {'id': reunion.id} ) }}" class="btn btn-primary"><ion-icon name="create" size="small"></ion-icon> Modifier la reunion</a>&emsp; 
+            <a href="" class="btn btn btn-1 btn btn-primary"><ion-icon name="add-circle" size="small"></ion-icon> Inviter Participant</a>&emsp;
+            <a href="" class="btn btn btn-1 btn btn-danger"><ion-icon name="trash" size="small"></ion-icon> Supprimer la réunion</a>
+        </div>
+    </article>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BlogController!{% endblock %}
+
+{% block body %}
+ 
+<section class="reunion">
+    {% for reunion in reunions %}
+        <reunion>
+            <h2><u>TITRE</u>: {{ reunion.title }}</h2>
+            <div class="metadata">Réunion créer le {{ reunion.createdAt | date('d/m/Y') }} à {{ reunion.createdAt | date('H:i') }} </div>
+            <div class="content">
+                <h5><u>THEME</u>:{{ reunion.theme }}</h5>
+                <h5><u>TYPE DE REUNION</u>:{{ reunion.type }}</h5>
+                <h4>Réunion tenu le :  {{reunion.date}} </h4>
+                <h4>De {{reunion.heureDebut}} à {{reunion.heureFin}} </h4>
+                <h4> Réunion tenu dans : {{ reunion.salle }} </h4>
+                <p>
+                    {{ reunion.details | raw }}
+                    <br>
+                    <a href="{{ path('blog_show', {'id': reunion.id}) }}" class="btn btn-primary">Lire la suite <ion-icon name="arrow-forward"></ion-icon></a>
+                </p>
+            </div>
+        </reunion>
+        <hr>
+    {% endfor %}
+</section>
+{% endblock %}
